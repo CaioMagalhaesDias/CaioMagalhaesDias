@@ -1,5 +1,5 @@
 - 👋 Hi, I’m @CaioMagalhaesDias
-- 👀 I’m interested in Tecnology, Programation.
+- 👀 I’m interested in Tecnology, Programmation.
 - 🌱 I’m currently learning Information System on UNITAU
 - 💞️ I’m looking to collaborate on a job, trainee or 
 internship
