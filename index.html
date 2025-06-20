@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <style>
+        /* --- Reset Básico e Estilos Globais --- */
         * {
             margin: 0;
             padding: 0;
@@ -42,7 +43,7 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            -webkit-text-fill-color: transparent;
+            text-fill-color: transparent;
         }
 
         h2 {
@@ -222,8 +223,9 @@
             height: 200px;
             position: relative;
             transform-style: preserve-3d;
-            transition: transform 0.8s;
             cursor: pointer;
+            /* TRANSIÇÃO APLICADA AQUI PARA SER MAIS SUAVE */
+            transition: transform 0.8s ease-in-out; 
         }
 
         .card:hover {
@@ -235,12 +237,15 @@
             width: 100%;
             height: 100%;
             backface-visibility: hidden;
+            -webkit-backface-visibility: hidden; /* Para compatibilidade com browsers mais antigos */
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             border-radius: 15px;
             box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+            /* ADICIONADO PARA FORÇAR ACELERAÇÃO POR HARDWARE (GPU) */
+            transform: translateZ(0); 
         }
 
         .card-front {
@@ -305,7 +310,7 @@
     </style>
 </head>
 <body>
-    <title>Portifolio</title>
+
     <header class="hero">
         <div class="hero-content">
             <h1></h1>
@@ -327,9 +332,9 @@
             <div class="container">
                 <h2><i class="fas fa-user-astronaut"></i> Sobre Mim</h2>
                 <div class="sobre-content">
-                    <img src="foto de perfil.png" alt="Sua Foto de Perfil">
+                    <img src="https://via.placeholder.com/150" alt="Sua Foto de Perfil">
                     <p>
-                        Olá! Sou um amante de tecnologia e estudante de desenvolvimento full-stack, apaixonado por criar soluções criativas e funcionais. Estou sempre buscando aprender novas tecnologias e aprimorar minhas habilidades.
+                        Olá! Sou um entusiasta de tecnologia e estudante de desenvolvimento full-stack, apaixonado por criar soluções inovadoras e funcionais. Estou sempre buscando aprender novas tecnologias e aprimorar minhas habilidades para construir aplicações web completas, desde o front-end até o back-end.
                     </p>
                 </div>
             </div>
@@ -344,14 +349,14 @@
                             <i class="fas fa-laptop-code"></i>
                         </div>
                         <h3>Cursos Concluídos</h3>
-                        <p class="numero-cursos">20+</p>
+                        <p class="numero-cursos">15+</p>
                     </div>
                     <div class="curso-card">
                         <div class="icon">
                              <i class="fas fa-code-branch"></i>
                         </div>
                         <h3>Projetos no GitHub</h3>
-                        <p class="numero-cursos">5+</p>
+                        <p class="numero-cursos">10+</p>
                     </div>
                 </div>
             </div>
@@ -369,7 +374,7 @@
                         <div class="card-face card-back">
                             <h3>Perfil Profissional</h3>
                             <p>Vamos nos conectar e trocar experiências!</p>
-                            <a href="https://www.linkedin.com/in/caio-magalh%C3%A3es-dias-a9a115195/" target="_blank">Visitar Perfil</a>
+                            <a href="#" target="_blank">Visitar Perfil</a>
                         </div>
                     </div>
                     
@@ -381,7 +386,7 @@
                         <div class="card-face card-back">
                             <h3>Meus Projetos</h3>
                             <p>Veja o código-fonte dos meus projetos e contribuições.</p>
-                            <a href="https://github.com/CaioMagalhaesDias?tab=repositories" target="_blank">Ver Repositórios</a>
+                            <a href="#" target="_blank">Ver Repositórios</a>
                         </div>
                     </div>
                 </div>
@@ -391,7 +396,7 @@
     </main>
 
     <footer>
-        <p>&copy; 2025 - Feito por Caio Magalhães Dias</p>
+        <p>&copy; 2025 - Feito com <i class="fas fa-heart" style="color: #e74c3c;"></i> por </p>
     </footer>
 
 </body>
