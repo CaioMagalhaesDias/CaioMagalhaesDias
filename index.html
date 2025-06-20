@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio de Desenvolvedor Full-Stack</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #121212;
+            color: #e0e0e0;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        h1, h2 {
+            font-weight: 600;
+            background: linear-gradient(90deg, #8e44ad, #3498db);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 3rem;
+            font-size: 2.5rem;
+            position: relative;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, #8e44ad, #3498db);
+            border-radius: 2px;
+        }
+
+        section {
+            padding: 60px 0;
+        }
+
+        /* --- Animação de Fade-in --- */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            animation: fadeIn 1s ease-in-out forwards;
+        }
+
+
+        /* --- Cabeçalho (Hero Section) --- */
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: #121212 url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"%3E%3Cg fill-rule="evenodd"%3E%3Cg fill="%231a1a1a" fill-opacity="0.4"%3E%3Cpath opacity=".5" d="M96 95h4v1h-4v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9zm-1 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9z"/%3E%3Cpath d="M6 5V0h1v5h9V0h1v5h9V0h1v5h9V0h1v5h9V0h1v5h9V0h1v5h9V0h1v5h9V0h1v5h9V0h1v5h5v1h-5v9h5v1h-5v9h5v1h-5v9h5v1h-5v9h5v1h-5v9h5v1h-5v9h5v1h-5v9h5v1h-5v9h5v1h-5v5h-1h-9v5h-1v-5h-9v5h-1v-5h-9v5h-1v-5h-9v5h-1v-5h-9v5h-1v-5h-9v5h-1v-5h-9v5h-1v-5h-9v5H0v-1h5v-9H0v-1h5v-9H0v-1h5v-9H0v-1h5v-9H0v-1h5v-9H0v-1h5v-9H0v-1h5v-9H0v-1h5V0h1v5h9V0h1v5h9V0h1v5h9V0h1v5h9V0h1v5h9V0h1v5h9V0h1v5h9V0h1v5h9V0h1v5h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9zm10-1h-9v-9h9v9zm-10 0h-9v-9h9v9zm-10 0h-9v-9h9v9zm-10 0h-9v-9h9v9zm-10 0h-9v-9h9v9zm-10 0h-9v-9h9v9zm-10 0h-9v-9h9v9zm-10 0h-9v-9h9v9zm-10-10v-9h9v9h-9zm10 0v-9h9v9h-9zm10 0v-9h9v9h-9zm10 0v-9h9v9h-9zm10 0v-9h9v9h-9zm10 0v-9h9v9h-9zm10 0v-9h9v9h-9zm10 0v-9h9v9h-9zm10-10h-9v-9h9v9zm-10 0h-9v-9h9v9zm-10 0h-9v-9h9v9zm-10 0h-9v-9h9v9zm-10 0h-9v-9h9v9zm-10 0h-9v-9h9v9zm-10 0h-9v-9h9v9zm-10 0h-9v-9h9v9zm-10-10v-9h9v9h-9zm10 0v-9h9v9h-9zm10 0v-9h9v9h-9zm10 0v-9h9v9h-9zm10 0v-9h9v9h-9zm10 0v-9h9v9h-9zm10 0v-9h9v9h-9zm10 0v-9h9v9h-9zm10-10h-9v-9h9v9zm-10 0h-9v-9h9v9zm-10 0h-9v-9h9v9zm-10 0h-9v-9h9v9zm-10 0h-9v-9h9v9zm-10 0h-9v-9h9v9zm-10 0h-9v-9h9v9zm-10 0h-9v-9h9v9zm-10-10v-9h9v9h-9zm10 0v-9h9v9h-9zm10 0v-9h9v9h-9zm10 0v-9h9v9h-9zm10 0v-9h9v9h-9zm10 0v-9h9v9h-9zm10 0v-9h9v9h-9zm10 0v-9h9v9h-9zm10-10h-9v-9h9v9zm-10 0h-9v-9h9v9zm-10 0h-9v-9h9v9zm-10 0h-9v-9h9v9zm-10 0h-9v-9h9v9zm-10 0h-9v-9h9v9zm-10 0h-9v-9h9v9zm-10 0h-9v-9h9v9zm-10-10v-9h9v9h-9zm10 0v-9h9v9h-9zm10 0v-9h9v9h-9zm10 0v-9h9v9h-9zm10 0v-9h9v9h-9zm10 0v-9h9v9h-9zm10 0v-9h9v9h-9zm10 0v-9h9v9h-9z"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');
+        }
+
+        .hero-content {
+            opacity: 0;
+            animation: fadeIn 1.5s 0.5s ease-in-out forwards;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero .subtitle {
+            font-size: 1.5rem;
+            font-weight: 300;
+            color: #ccc;
+            margin-bottom: 2rem;
+        }
+
+        .hero-icons {
+            margin-top: 1rem;
+        }
+
+        .hero-icons .icon {
+            font-size: 1.8rem;
+            margin: 0 1rem;
+            color: #aaa;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .hero-icons .icon:hover {
+            color: #3498db;
+            transform: scale(1.2);
+        }
+
+        /* --- Seção Sobre Mim --- */
+        #sobre {
+            background-color: #1a1a1a;
+        }
+
+        .sobre-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .sobre-content img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 5px solid #3498db;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 0 20px rgba(52, 152, 219, 0.5);
+            transition: transform 0.3s ease;
+        }
+        .sobre-content img:hover {
+            transform: scale(1.05);
+        }
+
+        .sobre-content p {
+            max-width: 700px;
+            font-size: 1.1rem;
+        }
+
+        /* --- Seção de Cursos --- */
+        .cursos-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .curso-card {
+            background: #1e1e1e;
+            padding: 2.5rem;
+            border-radius: 10px;
+            text-align: center;
+            width: 300px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-left: 5px solid #8e44ad;
+        }
+        
+        .curso-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 30px rgba(142, 68, 173, 0.3);
+        }
+        
+        .curso-card .icon {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            color: #8e44ad;
+        }
+
+        .curso-card h3 {
+            font-size: 1.5rem;
+            color: #fff;
+            margin-bottom: 0.5rem;
+        }
+
+        .curso-card .numero-cursos {
+            font-size: 3rem;
+            font-weight: 700;
+            background: linear-gradient(90deg, #8e44ad, #3498db);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* --- Seção Redes Sociais / Contato --- */
+        #contato {
+            background-color: #1a1a1a;
+        }
+        .social-cards {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            perspective: 1000px;
+        }
+
+        .card {
+            width: 300px;
+            height: 200px;
+            position: relative;
+            transform-style: preserve-3d;
+            transition: transform 0.8s;
+            cursor: pointer;
+        }
+
+        .card:hover {
+            transform: rotateY(180deg);
+        }
+
+        .card-face {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+        }
+
+        .card-front {
+            background: linear-gradient(45deg, #2c3e50, #34495e);
+        }
+
+        .card-front i {
+            font-size: 4rem;
+        }
+        
+        .card-front .card-title {
+            font-size: 1.8rem;
+            margin-top: 1rem;
+            font-weight: 600;
+        }
+
+        .card-back {
+            background: linear-gradient(45deg, #8e44ad, #5d2b7a);
+            transform: rotateY(180deg);
+            color: #fff;
+            text-align: center;
+            padding: 1rem;
+        }
+        
+        .card-back h3 {
+            margin-bottom: 1rem;
+        }
+
+        .card-back a {
+            text-decoration: none;
+            color: #fff;
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            transition: background-color 0.3s;
+        }
+
+        .card-back a:hover {
+            background-color: rgba(255, 255, 255, 0.4);
+        }
+
+        /* --- Footer --- */
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background-color: #1a1a1a;
+            border-top: 1px solid #333;
+        }
+        
+        /* --- Responsividade --- */
+        @media(max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            .hero .subtitle {
+                font-size: 1.2rem;
+            }
+            h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <title>Portifolio</title>
+    <header class="hero">
+        <div class="hero-content">
+            <h1></h1>
+            <p class="subtitle">Estudante de Desenvolvimento Full-Stack</p>
+            <div class="hero-icons">
+                <i class="fab fa-html5 icon" title="HTML5"></i>
+                <i class="fab fa-css3-alt icon" title="CSS3"></i>
+                <i class="fab fa-js-square icon" title="JavaScript"></i>
+                <i class="fab fa-react icon" title="React"></i>
+                <i class="fab fa-node-js icon" title="Node.js"></i>
+                <i class="fas fa-database icon" title="SQL/NoSQL"></i>
+            </div>
+        </div>
+    </header>
+
+    <main>
+
+        <section id="sobre" class="fade-in">
+            <div class="container">
+                <h2><i class="fas fa-user-astronaut"></i> Sobre Mim</h2>
+                <div class="sobre-content">
+                    <img src="foto de perfil.png" alt="Sua Foto de Perfil">
+                    <p>
+                        Olá! Sou um amante de tecnologia e estudante de desenvolvimento full-stack, apaixonado por criar soluções criativas e funcionais. Estou sempre buscando aprender novas tecnologias e aprimorar minhas habilidades.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="cursos" class="fade-in">
+            <div class="container">
+                <h2><i class="fas fa-graduation-cap"></i> Formação e Cursos</h2>
+                <div class="cursos-wrapper">
+                    <div class="curso-card">
+                        <div class="icon">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
+                        <h3>Cursos Concluídos</h3>
+                        <p class="numero-cursos">20+</p>
+                    </div>
+                    <div class="curso-card">
+                        <div class="icon">
+                             <i class="fas fa-code-branch"></i>
+                        </div>
+                        <h3>Projetos no GitHub</h3>
+                        <p class="numero-cursos">5+</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contato" class="fade-in">
+            <div class="container">
+                <h2><i class="fas fa-project-diagram"></i> Minhas Redes</h2>
+                <div class="social-cards">
+                    <div class="card">
+                        <div class="card-face card-front">
+                            <i class="fab fa-linkedin" style="color:#0A66C2;"></i>
+                            <p class="card-title">LinkedIn</p>
+                        </div>
+                        <div class="card-face card-back">
+                            <h3>Perfil Profissional</h3>
+                            <p>Vamos nos conectar e trocar experiências!</p>
+                            <a href="https://www.linkedin.com/in/caio-magalh%C3%A3es-dias-a9a115195/" target="_blank">Visitar Perfil</a>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-face card-front">
+                            <i class="fab fa-github" style="color:#FFF;"></i>
+                            <p class="card-title">GitHub</p>
+                        </div>
+                        <div class="card-face card-back">
+                            <h3>Meus Projetos</h3>
+                            <p>Veja o código-fonte dos meus projetos e contribuições.</p>
+                            <a href="https://github.com/CaioMagalhaesDias?tab=repositories" target="_blank">Ver Repositórios</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2025 - Feito por Caio Magalhães Dias</p>
+    </footer>
+
+</body>
+</html>
