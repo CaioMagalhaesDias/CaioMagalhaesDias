@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfólio de Desenvolvedor Full-Stack</title>
+    <title>Portfólio de Desenvolvedor | Caio Magalhães Dias</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -34,7 +34,7 @@
         .container {
             max-width: 1100px;
             margin: 0 auto;
-            padding: 2rem;
+            padding: 0 2rem; /* Alterado para não ter padding vertical por padrão */
         }
 
         h1, h2 {
@@ -48,7 +48,7 @@
 
         h2 {
             text-align: center;
-            margin-bottom: 3rem;
+            margin-bottom: 4rem;
             font-size: 2.5rem;
             position: relative;
         }
@@ -56,7 +56,7 @@
         h2::after {
             content: '';
             position: absolute;
-            bottom: -10px;
+            bottom: -15px;
             left: 50%;
             transform: translateX(-50%);
             width: 80px;
@@ -66,14 +66,14 @@
         }
 
         section {
-            padding: 60px 0;
+            padding: 100px 0;
         }
 
         /* --- Animação de Fade-in --- */
         @keyframes fadeIn {
             from {
                 opacity: 0;
-                transform: translateY(20px);
+                transform: translateY(30px);
             }
             to {
                 opacity: 1;
@@ -82,9 +82,54 @@
         }
 
         .fade-in {
-            animation: fadeIn 1s ease-in-out forwards;
+            opacity: 0; /* Começa invisível */
+            animation: fadeIn 1s ease-out forwards;
         }
 
+        /* --- Barra de Navegação --- */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(18, 18, 18, 0.85);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1rem 0;
+            border-bottom: 1px solid #2a2a2a;
+            transition: background 0.3s ease;
+        }
+
+        .navbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .nav-logo {
+            font-size: 1.6rem;
+            font-weight: 700;
+            text-decoration: none;
+            color: #fff;
+        }
+
+        .nav-menu {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: #e0e0e0;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-menu a:hover {
+            color: #3498db;
+        }
 
         /* --- Cabeçalho (Hero Section) --- */
         .hero {
@@ -105,6 +150,22 @@
         .hero h1 {
             font-size: 3.5rem;
             margin-bottom: 0.5rem;
+            min-height: 56px; /* Para não pular durante a animação */
+        }
+
+        /* Efeito de digitação */
+        .hero h1 .cursor {
+            display: inline-block;
+            background: linear-gradient(90deg, #8e44ad, #3498db);
+            margin-left: 0.2rem;
+            width: 4px;
+            animation: blink 1s infinite;
+            border-radius: 2px;
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
         }
 
         .hero .subtitle {
@@ -127,7 +188,7 @@
 
         .hero-icons .icon:hover {
             color: #3498db;
-            transform: scale(1.2);
+            transform: scale(1.2) translateY(-5px);
         }
 
         /* --- Seção Sobre Mim --- */
@@ -148,11 +209,13 @@
             border-radius: 50%;
             border: 5px solid #3498db;
             margin-bottom: 1.5rem;
-            box-shadow: 0 0 20px rgba(52, 152, 219, 0.5);
-            transition: transform 0.3s ease;
+            box-shadow: 0 0 25px rgba(52, 152, 219, 0.5);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
         }
+
         .sobre-content img:hover {
-            transform: scale(1.05);
+            transform: scale(1.05) rotate(3deg);
+            box-shadow: 0 0 35px rgba(142, 68, 173, 0.6);
         }
 
         .sobre-content p {
@@ -161,6 +224,10 @@
         }
 
         /* --- Seção de Cursos --- */
+        #cursos {
+            background-color: #121212;
+        }
+
         .cursos-wrapper {
             display: flex;
             justify-content: center;
@@ -174,17 +241,17 @@
             padding: 2.5rem;
             border-radius: 10px;
             text-align: center;
-            width: 300px;
+            width: 320px;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             border-left: 5px solid #8e44ad;
         }
-        
+
         .curso-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 8px 30px rgba(142, 68, 173, 0.3);
+            transform: translateY(-12px);
+            box-shadow: 0 10px 30px rgba(142, 68, 173, 0.4);
         }
-        
+
         .curso-card .icon {
             font-size: 3.5rem;
             margin-bottom: 1rem;
@@ -206,52 +273,148 @@
             background-clip: text;
         }
 
-        /* --- Seção Redes Sociais / Contato --- */
-       #contato {
+        /* --- NOVA SEÇÃO DE PROJETOS --- */
+        #projetos {
             background-color: #1a1a1a;
+        }
+
+        .projetos-wrapper {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .projeto-card {
+            background: #1e1e1e;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            border-top: 4px solid #3498db;
+        }
+
+        .projeto-card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 10px 30px rgba(52, 152, 219, 0.4);
+        }
+
+        .projeto-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            filter: grayscale(30%);
+            transition: filter 0.3s ease;
+        }
+        
+        .projeto-card:hover img {
+            filter: grayscale(0%);
+        }
+
+        .projeto-info {
+            padding: 1.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .projeto-info h3 {
+            color: #fff;
+            margin-bottom: 0.5rem;
+            font-size: 1.4rem;
+        }
+
+        .projeto-info p {
+            color: #ccc;
+            flex-grow: 1;
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+        }
+
+        .projeto-tech {
+            margin-bottom: 1.5rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .projeto-tech span {
+            background: #333;
+            color: #e0e0e0;
+            padding: 0.3rem 0.7rem;
+            border-radius: 5px;
+            font-size: 0.8rem;
+        }
+
+        .projeto-links a {
+            text-decoration: none;
+            color: #3498db;
+            margin-right: 1.5rem;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .projeto-links a:hover {
+            color: #8e44ad;
+        }
+        
+        .projeto-links a i {
+            margin-left: 5px;
+        }
+
+        /* --- SEÇÃO REDES SOCIAIS / CONTATO (CÓDIGO CORRIGIDO) --- */
+        #contato {
+            background-color: #121212;
         }
         .social-cards {
             display: flex;
             justify-content: center;
-            gap: 2rem;
+            gap: 2.5rem;
             flex-wrap: wrap;
-            perspective: 1000px;
+            perspective: 1500px; /* Aumentar a perspectiva para um efeito mais sutil */
         }
-        
+
         .card {
             width: 300px;
             height: 200px;
             position: relative;
-            transform-style: preserve-3d;
             cursor: pointer;
-            transition: transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.3s ease;
-            border-radius: 15px; /* Adicionado para a sombra não vazar */
-            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+            border-radius: 15px; /* Adicionado para consistência */
         }
         
-        .card:hover {
+        .card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transform-style: preserve-3d;
+            transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            /* Essa curva cúbica cria um efeito de "overshoot" (ultrapassagem), bem legal */
+        }
+        
+        .card:hover .card-inner {
             transform: rotateY(180deg);
-            box-shadow: 0 10px 40px rgba(0,0,0,0.5);
         }
-        
+
         .card-face {
             position: absolute;
             width: 100%;
             height: 100%;
-            backface-visibility: hidden;
             -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             border-radius: 15px;
-            will-change: transform; 
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+            will-change: transform; /* Avisa o navegador para otimizar */
         }
-        
+
         .card-front {
             background: linear-gradient(45deg, #2c3e50, #34495e);
         }
-        
+
         .card-front i {
             font-size: 4rem;
         }
@@ -261,9 +424,9 @@
             margin-top: 1rem;
             font-weight: 600;
         }
-        
+
         .card-back {
-            background: linear-gradient(45deg, #8e44ad, #5d2b7a);
+            background: linear-gradient(135deg, #8e44ad, #5d2b7a);
             transform: rotateY(180deg);
             color: #fff;
             text-align: center;
@@ -272,48 +435,79 @@
         
         .card-back h3 {
             margin-bottom: 1rem;
+            font-size: 1.3rem;
         }
         
+        .card-back p {
+            padding: 0 1rem;
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+        }
+
         .card-back a {
             text-decoration: none;
             color: #fff;
             background-color: rgba(255, 255, 255, 0.2);
             padding: 0.8rem 1.5rem;
             border-radius: 50px;
-            transition: background-color 0.3s;
+            transition: background-color 0.3s, transform 0.3s;
         }
-        
+
         .card-back a:hover {
             background-color: rgba(255, 255, 255, 0.4);
+            transform: scale(1.05);
         }
+
         /* --- Footer --- */
         footer {
             text-align: center;
             padding: 2rem;
             background-color: #1a1a1a;
-            border-top: 1px solid #333;
+            border-top: 1px solid #2a2a2a;
         }
         
         /* --- Responsividade --- */
         @media(max-width: 768px) {
+            .nav-menu {
+                display: none; /* Em um projeto real, aqui entraria um menu hamburguer */
+            }
+
             .hero h1 {
                 font-size: 2.5rem;
+                min-height: 42px;
             }
+
             .hero .subtitle {
                 font-size: 1.2rem;
             }
+
             h2 {
                 font-size: 2rem;
+            }
+            
+            section {
+                padding: 80px 0;
             }
         }
     </style>
 </head>
 <body>
 
-    <header class="hero">
+    <nav class="navbar">
+        <div class="container">
+            <a href="#" class="nav-logo">CMD</a>
+            <ul class="nav-menu">
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#cursos">Formação</a></li>
+                <li><a href="#projetos">Projetos</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="hero" id="home">
         <div class="hero-content">
-            <h1></h1>
-            <p class="subtitle">Estudante de Desenvolvimento Full-Stack</p>
+            <h1></h1> <p class="subtitle">Estudante de Desenvolvimento Full-Stack</p>
             <div class="hero-icons">
                 <i class="fab fa-html5 icon" title="HTML5"></i>
                 <i class="fab fa-css3-alt icon" title="CSS3"></i>
@@ -331,16 +525,17 @@
             <div class="container">
                 <h2><i class="fas fa-user-astronaut"></i> Sobre Mim</h2>
                 <div class="sobre-content">
-                    <img src="foto de perfil.png" alt="Sua Foto de Perfil">
+                    <img src="https://via.placeholder.com/150" alt="Sua Foto de Perfil">
                     <p>
-                        Olá! Sou um amante de tecnologia e estudante de desenvolvimento full-stack, apaixonado por criar soluções criativas e funcionais. Estou sempre buscando aprender novas tecnologias e aprimorar minhas habilidades.
+                        Olá! Sou um amante de tecnologia e estudante de desenvolvimento full-stack, apaixonado por criar soluções criativas e funcionais. Estou sempre buscando aprender novas tecnologias e aprimorar minhas habilidades para transformar ideias em realidade digital.
+                    </p>
                 </div>
             </div>
         </section>
 
         <section id="cursos" class="fade-in">
             <div class="container">
-                <h2><i class="fas fa-graduation-cap"></i> Formação e Cursos</h2>
+                <h2><i class="fas fa-graduation-cap"></i> Formação e Conquistas</h2>
                 <div class="cursos-wrapper">
                     <div class="curso-card">
                         <div class="icon">
@@ -351,7 +546,7 @@
                     </div>
                     <div class="curso-card">
                         <div class="icon">
-                             <i class="fas fa-code-branch"></i>
+                            <i class="fas fa-code-branch"></i>
                         </div>
                         <h3>Projetos no GitHub</h3>
                         <p class="numero-cursos">5+</p>
@@ -360,31 +555,75 @@
             </div>
         </section>
 
+        <section id="projetos" class="fade-in">
+            <div class="container">
+                <h2><i class="fas fa-rocket"></i> Meus Projetos</h2>
+                <div class="projetos-wrapper">
+                    <div class="projeto-card">
+                        <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=2070&auto=format&fit=crop" alt="Imagem do Projeto 1">
+                        <div class="projeto-info">
+                            <h3>Nome do Projeto Um</h3>
+                            <p>Uma breve descrição do que o projeto faz, os desafios e as tecnologias usadas. Este foi um projeto focado em criar uma API RESTful completa.</p>
+                            <div class="projeto-tech">
+                                <span>React</span>
+                                <span>Node.js</span>
+                                <span>Express</span>
+                            </div>
+                            <div class="projeto-links">
+                                <a href="#" target="_blank">Ver ao Vivo <i class="fas fa-external-link-alt"></i></a>
+                                <a href="https://github.com/CaioMagalhaesDias" target="_blank">Repositório <i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="projeto-card">
+                        <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=2070&auto=format&fit=crop" alt="Imagem do Projeto 2">
+                        <div class="projeto-info">
+                            <h3>Nome do Projeto Dois</h3>
+                            <p>Landing page moderna e responsiva desenvolvida com foco total em design, acessibilidade e performance, utilizando animações CSS avançadas.</p>
+                            <div class="projeto-tech">
+                                <span>HTML5</span>
+                                <span>CSS3</span>
+                                <span>JavaScript</span>
+                            </div>
+                            <div class="projeto-links">
+                                <a href="#" target="_blank">Ver ao Vivo <i class="fas fa-external-link-alt"></i></a>
+                                <a href="https://github.com/CaioMagalhaesDias" target="_blank">Repositório <i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+            </div>
+        </section>
+
         <section id="contato" class="fade-in">
             <div class="container">
                 <h2><i class="fas fa-project-diagram"></i> Minhas Redes</h2>
                 <div class="social-cards">
                     <div class="card">
-                        <div class="card-face card-front">
-                            <i class="fab fa-linkedin" style="color:#0A66C2;"></i>
-                            <p class="card-title">LinkedIn</p>
-                        </div>
-                        <div class="card-face card-back">
-                            <h3>Perfil Profissional</h3>
-                            <p>Vamos nos conectar e trocar experiências!</p>
-                            <a href="https://www.linkedin.com/in/caio-magalh%C3%A3es-dias-a9a115195/" target="_blank">Visitar Perfil</a>
-                        </div>
+                       <div class="card-inner">
+                           <div class="card-face card-front">
+                                <i class="fab fa-linkedin" style="color:#0A66C2;"></i>
+                                <p class="card-title">LinkedIn</p>
+                            </div>
+                            <div class="card-face card-back">
+                                <h3>Perfil Profissional</h3>
+                                <p>Vamos nos conectar e trocar experiências no mundo da tecnologia!</p>
+                                <a href="https://www.linkedin.com/in/caio-magalh%C3%A3es-dias-a9a115195/" target="_blank">Visitar Perfil</a>
+                            </div>
+                       </div>
                     </div>
                     
                     <div class="card">
-                        <div class="card-face card-front">
-                            <i class="fab fa-github" style="color:#FFF;"></i>
-                            <p class="card-title">GitHub</p>
-                        </div>
-                        <div class="card-face card-back">
-                            <h3>Meus Projetos</h3>
-                            <p>Veja o código-fonte dos meus projetos e contribuições.</p>
-                            <a href="https://github.com/CaioMagalhaesDias?tab=repositories" target="_blank">Ver Repositórios</a>
+                        <div class="card-inner">
+                            <div class="card-face card-front">
+                                <i class="fab fa-github" style="color:#FFF;"></i>
+                                <p class="card-title">GitHub</p>
+                            </div>
+                            <div class="card-face card-back">
+                                <h3>Meus Projetos</h3>
+                                <p>Veja o código-fonte dos meus projetos, estudos e contribuições.</p>
+                                <a href="https://github.com/CaioMagalhaesDias?tab=repositories" target="_blank">Ver Repositórios</a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -394,9 +633,53 @@
     </main>
 
     <footer>
-        <p>&copy; 2025 - Feito por Caio Magalhães Dias</p>
+        <p>&copy; 2025 - Feito com <i class="fas fa-heart" style="color: #e0245e;"></i> por Caio Magalhães Dias</p>
     </footer>
 
+    <script>
+        // Efeito de Máquina de Escrever
+        document.addEventListener('DOMContentLoaded', () => {
+            const titleElement = document.querySelector('.hero-content h1');
+            const name = "Caio Magalhães Dias";
+            titleElement.innerHTML = ''; // Limpa para garantir
+
+            let i = 0;
+            function typeWriter() {
+                if (i < name.length) {
+                    titleElement.innerHTML = name.substring(0, i + 1) + '<span class="cursor">|</span>';
+                    i++;
+                    setTimeout(typeWriter, 120);
+                } else {
+                    // Mantém o cursor piscando no final
+                    titleElement.innerHTML = name + '<span class="cursor">|</span>';
+                }
+            }
+            // Inicia o efeito um pouco depois da página carregar
+            setTimeout(typeWriter, 500);
+        });
+
+        // Animação de Fade-in ao rolar a página
+        const faders = document.querySelectorAll('.fade-in');
+        const appearOptions = {
+            threshold: 0.2, // O elemento aparece quando 20% dele estiver visível
+            rootMargin: "0px 0px -50px 0px" // Começa a animar um pouco antes de estar totalmente na tela
+        };
+
+        const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll) {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) {
+                    return;
+                } else {
+                    entry.target.style.animation = `fadeIn 1s ${entry.target.dataset.delay || '0s'} ease-out forwards`;
+                    appearOnScroll.unobserve(entry.target);
+                }
+            });
+        }, appearOptions);
+
+        faders.forEach(fader => {
+            appearOnScroll.observe(fader);
+        });
+
+    </script>
 </body>
 </html>
-
